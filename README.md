@@ -6,7 +6,7 @@ This a Python implementation of a Pong-like game that was once available on
  the bat, but also on the angle at which the bat was kept). This made the
  gameplay very interesting.
 
- * The collision was bat followed the Newtonian laws perfectly. So, if the
+ * The collision with bat followed the Newtonian laws perfectly. So, if the
  was just rotating, but not translating, then the collision would still
  impart some additional velocity to the ball (depending where the ball hit
  the bat, the velocity imparted would be greater if the ball hit the bat

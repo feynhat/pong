@@ -50,3 +50,10 @@ You must have python and pygame module to run this game.
 Just run:
 
     python pong.py
+
+Controls:
+ 
+ * Hold "W" to move the bat up.
+ * Hold "S" to move the bat down.
+ * Hold "A" to rotate the bat anti-clockwise.
+ * Hold "D" to rotate the bat clockwise.

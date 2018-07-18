@@ -28,10 +28,10 @@ class Entity(object):
 
     def preUpdate(self):
         pass
-    
+
     def postUpdate(self):
         pass
-    
+
     def draw(self, o):
         pass
 
@@ -46,7 +46,7 @@ class Poly(Shape):
         self.cx = float(sum(q[0] for q in p))/len(p)
         self.cy = float(sum(q[1] for q in p))/len(p)
         self.fill = fill
-   
+
     def preUpdate(self):
         self.prevp = self.p
 
@@ -78,17 +78,17 @@ class Rect(Poly):
         self.h = h
         p = [[left, top], [left+w, top], [left+w, top+h], [left, top+h]]
         super(Rect, self).__init__(p, color, fill)
-    
+
     def getRect(self):
         return pygame.Rect(self.left, self.top, self.w, self.h)
-    
+
 class Circle(Shape):
     def __init__(self, cx, cy, rad, color):
         self.cx = cx
         self.cy = cy
         self.rad = rad
         self.color = color
-    
+
     def getRect(self):
         return pygame.Rect(self.cx - self.rad, self.cy - self.rad, 2*self.rad, 2*self.rad)
 
@@ -97,7 +97,7 @@ class Circle(Shape):
     
     def translateY(self, y):
         self.cy += y
-    
+
     def rotate(self, ang):
         pass
 
@@ -133,16 +133,22 @@ class Game:
                     sys.exit()
 
                 if e.type == KEYUP:
-                    keyUpActions[chr(e.key)]()
-                
+                    try:
+                        keyUpActions[chr(e.key)]()
+                    except KeyError:
+                        print("No action assigned for", e.key)
+
                 if e.type == KEYDOWN:
-                    keyDownActions[chr(e.key)]()
+                    try:
+                        keyDownActions[chr(e.key)]()
+                    except KeyError:
+                        print("No action assigned for", e.key)
 
             self.wSurface.fill(self.bg)
 
             for e in self.entities:
                 e.preUpdate()
-                
+
                 e.translateX(e.vx)
                 e.translateY(e.vy)
                 e.vx += e.ax
@@ -150,7 +156,7 @@ class Game:
                 e.ax += e.jx
                 e.ay += e.jy
                 e.rotate(e.av)
-                
+
                 e.logic(e)
                 e.postUpdate()
                 e.draw(self.wSurface)

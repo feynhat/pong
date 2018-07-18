@@ -1,6 +1,5 @@
 This a Python implementation of a Pong-like game that was once available on
-[DishTV](https://en.wikipedia.org/wiki/Dish_TV)'s Game Channel. The game it
-a regular Pong game. It had some additional mechanics such as:
+[DishTV](https://en.wikipedia.org/wiki/Dish_TV)'s Game Channel. The game was not like a regular Pong game. It had some additional mechanics such as:
 
  * The bats could rotate in plane about their geometric center. (So, angle
  of deflection depended not only on the angle at which the ball approached

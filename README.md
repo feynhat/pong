@@ -7,7 +7,7 @@ This a Python implementation of a Pong-like game that was once available on
  gameplay very interesting.
 
  * The collision with bat followed the Newtonian laws perfectly. So, if the
- was just rotating, but not translating, then the collision would still
+ bat was just rotating, but not translating, then the collision would still
  impart some additional velocity to the ball (depending where the ball hit
  the bat, the velocity imparted would be greater if the ball hit the bat
  at the edge, than at the center, as expected from Newtonian laws). This 

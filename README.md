@@ -57,3 +57,10 @@ Controls:
  * Hold "S" to move the bat down.
  * Hold "A" to rotate the bat anti-clockwise.
  * Hold "D" to rotate the bat clockwise.
+
+TODO:
+
+ * Implement ray-tracing for collision detection. (Present collision
+ detection is fubar and won't detect collision if the ball is too fast).
+ * Pls fix: When the ball is too fast, it goes out of the playing area and 
+ gets stuck there.
